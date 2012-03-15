@@ -242,6 +242,9 @@ class FieldMetaData(
   def declaredAsPrimaryKeyInSchema =
     columnAttributes.exists(_.isInstanceOf[PrimaryKey])
 
+  def isSharded =
+    columnAttributes.exists(_.isInstanceOf[Sharded])
+
   def isAutoIncremented =
     columnAttributes.exists(_.isInstanceOf[AutoIncremented])
 

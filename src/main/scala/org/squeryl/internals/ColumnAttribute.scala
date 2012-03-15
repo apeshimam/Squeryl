@@ -42,6 +42,11 @@ case class Indexed(val nameOfIndex: Option[String]) extends ColumnAttribute with
         with AttributeValidOnNumericalColumn
         with AttributeValidOnMultipleColumn
 
+case class Sharded() extends ColumnAttribute
+        with AttributeValidOnNonNumericalColumn
+        with AttributeValidOnNumericalColumn
+
+
 case class PrimaryKey() extends ColumnAttribute
         with AttributeValidOnNonNumericalColumn
         with AttributeValidOnNumericalColumn

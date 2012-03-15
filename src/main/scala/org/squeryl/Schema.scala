@@ -488,6 +488,8 @@ trait Schema {
     else
       Set(new PrimaryKey)
   
+  protected def sharded = Sharded()
+
   protected def unique = Unique()
 
   protected def primaryKey = PrimaryKey()
