@@ -72,6 +72,7 @@ trait Schema {
     res
   }
 
+  protected implicit def tableToSharded[A](t: Table[A]) = new ShardedTablePrecursor(t)
 
   def findTablesFor[A](a: A): Iterable[Table[A]] = {
     val c = a.asInstanceOf[AnyRef].getClass
